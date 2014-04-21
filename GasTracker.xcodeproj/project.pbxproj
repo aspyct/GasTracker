@@ -57,8 +57,8 @@
 		7403E36019051F1600846D5B /* GTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTAppDelegate.h; sourceTree = "<group>"; };
 		7403E36119051F1600846D5B /* GTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTAppDelegate.m; sourceTree = "<group>"; };
 		7403E36419051F1600846D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7403E36619051F1600846D5B /* GTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GTHomeViewController.h; path = ../../GTHomeViewController.h; sourceTree = "<group>"; };
-		7403E36719051F1600846D5B /* GTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GTHomeViewController.m; path = ../../GTHomeViewController.m; sourceTree = "<group>"; };
+		7403E36619051F1600846D5B /* GTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTHomeViewController.h; sourceTree = "<group>"; };
+		7403E36719051F1600846D5B /* GTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTHomeViewController.m; sourceTree = "<group>"; };
 		7403E36919051F1600846D5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		7403E36F19051F1600846D5B /* GasTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7403E37019051F1600846D5B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -67,22 +67,22 @@
 		7403E37C19051F1600846D5B /* GasTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasTrackerTests.m; sourceTree = "<group>"; };
 		7403E38619051F9F00846D5B /* GTRefillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTRefillViewController.h; path = ../../GTRefillViewController.h; sourceTree = "<group>"; };
 		7403E38719051F9F00846D5B /* GTRefillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTRefillViewController.m; path = ../../GTRefillViewController.m; sourceTree = "<group>"; };
-		7403E3891905230B00846D5B /* GTHomeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTHomeDataSource.h; path = ../../GTHomeDataSource.h; sourceTree = "<group>"; };
-		7403E38A1905230B00846D5B /* GTHomeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTHomeDataSource.m; path = ../../GTHomeDataSource.m; sourceTree = "<group>"; };
-		7403E38C190523EA00846D5B /* GTConsumptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTConsumptionCell.h; path = ../../GTConsumptionCell.h; sourceTree = "<group>"; };
-		7403E38D190523EA00846D5B /* GTConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTConsumptionCell.m; path = ../../GTConsumptionCell.m; sourceTree = "<group>"; };
+		7403E3891905230B00846D5B /* GTHomeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTHomeDataSource.h; sourceTree = "<group>"; };
+		7403E38A1905230B00846D5B /* GTHomeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTHomeDataSource.m; sourceTree = "<group>"; };
+		7403E38C190523EA00846D5B /* GTConsumptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTConsumptionCell.h; sourceTree = "<group>"; };
+		7403E38D190523EA00846D5B /* GTConsumptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTConsumptionCell.m; sourceTree = "<group>"; };
 		7403E3901905282B00846D5B /* GasTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasTracker.xcdatamodel; sourceTree = "<group>"; };
-		7403E3E019052E5500846D5B /* GTDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTDataStore.h; path = ../GTDataStore.h; sourceTree = "<group>"; };
-		7403E3E119052E5500846D5B /* GTDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTDataStore.m; path = ../GTDataStore.m; sourceTree = "<group>"; };
+		7403E3E019052E5500846D5B /* GTDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTDataStore.h; sourceTree = "<group>"; };
+		7403E3E119052E5500846D5B /* GTDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTDataStore.m; sourceTree = "<group>"; };
 		7403E3E3190530B800846D5B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7403E3E51905623400846D5B /* GTRefill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefill.h; sourceTree = "<group>"; };
 		7403E3E61905623400846D5B /* GTRefill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefill.m; sourceTree = "<group>"; };
 		7403E3E81905655A00846D5B /* GTRefill+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTRefill+Extension.h"; sourceTree = "<group>"; };
 		7403E3E91905655A00846D5B /* GTRefill+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTRefill+Extension.m"; sourceTree = "<group>"; };
-		7403E3EB19056E1A00846D5B /* GTRecentRefillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTRecentRefillCell.h; path = ../../GTRecentRefillCell.h; sourceTree = "<group>"; };
-		7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTRecentRefillCell.m; path = ../../GTRecentRefillCell.m; sourceTree = "<group>"; };
-		7403E3EE1905847700846D5B /* GTRefillStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTRefillStore.h; path = ../GTRefillStore.h; sourceTree = "<group>"; };
-		7403E3EF1905847800846D5B /* GTRefillStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTRefillStore.m; path = ../GTRefillStore.m; sourceTree = "<group>"; };
+		7403E3EB19056E1A00846D5B /* GTRecentRefillCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRecentRefillCell.h; sourceTree = "<group>"; };
+		7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRecentRefillCell.m; sourceTree = "<group>"; };
+		7403E3EE1905847700846D5B /* GTRefillStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefillStore.h; sourceTree = "<group>"; };
+		7403E3EF1905847800846D5B /* GTRefillStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefillStore.m; sourceTree = "<group>"; };
 		87B939C88BBE47F8A4FC7426 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -242,7 +242,7 @@
 				7403E3E81905655A00846D5B /* GTRefill+Extension.h */,
 				7403E3E91905655A00846D5B /* GTRefill+Extension.m */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
