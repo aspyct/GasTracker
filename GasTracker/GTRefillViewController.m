@@ -7,43 +7,38 @@
 //
 
 #import "GTRefillViewController.h"
+#import "GTRefillStore.h"
+#import "GTRefill.h"
 
 @interface GTRefillViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *volume;
+@property (weak, nonatomic) IBOutlet UITextField *price;
+@property (weak, nonatomic) IBOutlet UITextField *day;
+@property (weak, nonatomic) IBOutlet UITextField *odometer;
+@property (strong, nonatomic) IBOutlet GTRefillStore *refillStore;
 
 @end
 
 @implementation GTRefillViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+- (IBAction)doSave:(id)sender {
+    GTRefill *refill = [self.refillStore buildRefill];
+    refill.liters = [NSDecimalNumber decimalNumberWithString:self.volume.text];
+    refill.pricePerLiter = [NSDecimalNumber decimalNumberWithString:self.price.text];
+    
+    if (self.odometer.text.length > 0) {
+        refill.odometer = [NSDecimalNumber decimalNumberWithString:self.odometer.text];
     }
-    return self;
+    
+    refill.day = [NSDate date];
+    
+    [self.refillStore saveRefill:refill];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (IBAction)doCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -6,20 +6,17 @@
 //  Copyright (c) 2014 Antoine d'Otreppe. All rights reserved.
 //
 
-#import "GTDatabaseProvider.h"
+#import "GTDataStore.h"
 #import "GTAppDelegate.h"
 
-@interface GTDatabaseProvider ()
+@interface GTDataStore ()
 
 @property (readonly) GTAppDelegate *appDelegate;
-@property (readonly) NSManagedObjectContext *managedObjectContext;
-@property (readonly) NSManagedObjectModel *managedObjectModel;
-@property (readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (strong, nonatomic) NSMutableSet *databaseObservers;
 
 @end
 
-@implementation GTDatabaseProvider
+@implementation GTDataStore
 
 - (id)init
 {
@@ -54,12 +51,12 @@
 
 - (void)databaseModified:(NSNotification *)notification
 {
-    for (id<GTDatabaseObserver> observer in self.databaseObservers) {
-        [observer databaseModified];
+    for (id<GTDataObserver> observer in self.databaseObservers) {
+        [observer dataModified];
     }
 }
 
-- (void)addDatabaseObserver:(id<GTDatabaseObserver>)observer
+- (void)addDatabaseObserver:(id<GTDataObserver>)observer
 {
     if (self.databaseObservers == nil) {
         self.databaseObservers = [[NSMutableSet alloc] initWithCapacity:5];
@@ -68,14 +65,9 @@
     [self.databaseObservers addObject:observer];
 }
 
-- (void)removeDatabaseObserver:(id<GTDatabaseObserver>)observer
+- (void)removeDatabaseObserver:(id<GTDataObserver>)observer
 {
     [self.databaseObservers removeObject:observer];
-}
-
-- (NSFetchRequest *)allRefills
-{
-    return [self.managedObjectModel fetchRequestTemplateForName:@"AllRefills"];
 }
 
 - (NSArray *)fetch:(NSFetchRequest *)request

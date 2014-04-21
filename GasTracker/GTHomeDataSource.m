@@ -7,7 +7,8 @@
 //
 
 #import "GTHomeDataSource.h"
-#import "GTKeyValueTableViewCell.h"
+#import "GTConsumptionCell.h"
+#import "GTRecentRefillCell.h"
 
 typedef enum {
     GTHomeDataSourceSectionConsumption,
@@ -30,20 +31,26 @@ typedef enum {
 
 @interface GTHomeDataSource ()
 
+@property (strong, nonatomic) IBOutlet GTRefillStore *refillStore;
 @property (strong, nonatomic) NSArray *recentRefills;
 
 @end
 
 @implementation GTHomeDataSource
 
-- (void)setCoreDataProvider:(GTDatabaseProvider *)coreDataProvider
+- (void)setRefillStore:(GTDataStore *)coreDataProvider
 {
-    if (_coreDataProvider != coreDataProvider) {
-        [_coreDataProvider removeDatabaseObserver:self];
+    if (_refillStore != coreDataProvider) {
+        [_refillStore removeDatabaseObserver:self];
         [coreDataProvider addDatabaseObserver:self];
         
-        _coreDataProvider = coreDataProvider;
+        _refillStore = coreDataProvider;
     }
+}
+
+- (void)dataModified
+{
+    _recentRefills = nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,17 +65,17 @@ typedef enum {
 
 - (UITableViewCell *)consumptionSummaryCellForRow:(NSInteger)row from:(UITableView *)tableView
 {
-    GTKeyValueTableViewCell *cell = [self aKeyValueCellFrom:tableView];
+    GTConsumptionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"consumption"];
     
     switch (row) {
         case GTHomeDataSourceSubsectionAverage:
-            [cell setKey:@"Average / 100km" andValue:@"4.52L"];
+            [cell setTitle:@"Average / 100km" andValue:@"4.52L"];
             break;
         case GTHomeDataSourceSubsectionPrice:
-            [cell setKey:@"Price / 100km" andValue:@"7.12€"];
+            [cell setTitle:@"Price / 100km" andValue:@"7.12€"];
             break;
         case GTHomeDataSourceSubsectionPerMonth:
-            [cell setKey:@"Per month" andValue:@"16.48L"];
+            [cell setTitle:@"Per month" andValue:@"16.48€"];
             break;
     }
     
@@ -78,28 +85,23 @@ typedef enum {
 
 - (UITableViewCell *)latestRefillCellForRow:(NSInteger)row from:(UITableView *)tableView
 {
-    GTKeyValueTableViewCell *cell = [self aKeyValueCellFrom:tableView];
-    
-    
-    [cell setKey:@"Relative date" andValue:@"4.57L / 10€"];
+    GTRecentRefillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"refill"];
+    cell.refill = [self.recentRefills objectAtIndex:row];
     
     return cell;
 }
 
 
-- (GTKeyValueTableViewCell *)aKeyValueCellFrom:(UITableView *)tableView
+- (GTConsumptionCell *)aKeyValueCellFrom:(UITableView *)tableView
 {
-    return [tableView dequeueReusableCellWithIdentifier:@"keyvalue"];
+    return [tableView dequeueReusableCellWithIdentifier:@"consumption"];
 }
 
 
 - (NSArray *)recentRefills
 {
     if (_recentRefills == nil) {
-        NSFetchRequest *allRefills = [self.coreDataProvider allRefills];
-        allRefills.fetchLimit = 5;
-        
-        _recentRefills = [self.coreDataProvider fetch:allRefills];
+        _recentRefills = [self.refillStore recentRefills];
     }
     
     return _recentRefills;

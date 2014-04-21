@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Antoine d'Otreppe. All rights reserved.
 //
 
-#import "GTKeyValueTableViewCell.h"
+#import "GTConsumptionCell.h"
 
-@interface GTKeyValueTableViewCell ()
+@interface GTConsumptionCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *value;
 
 @end
 
-@implementation GTKeyValueTableViewCell
+@implementation GTConsumptionCell
 
-- (void)setKey:(NSString *)key andValue:(NSString *)value
+- (void)setTitle:(NSString *)key andValue:(NSString *)value
 {
     self.title.text = key;
     self.value.text = value;

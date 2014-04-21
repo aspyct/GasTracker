@@ -7,10 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GTDatabaseProvider.h"
+#import "GTRefillStore.h"
 
-@interface GTHomeDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, GTDatabaseObserver>
-
-@property (strong, nonatomic) IBOutlet GTDatabaseProvider *coreDataProvider;
+@interface GTHomeDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, GTDataObserver>
 
 @end

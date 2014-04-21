@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GTKeyValueTableViewCell : UITableViewCell
+@interface GTConsumptionCell : UITableViewCell
 
-- (void)setKey:(NSString *)key andValue:(NSString *)value;
+- (void)setTitle:(NSString *)key andValue:(NSString *)value;
 
 @end
