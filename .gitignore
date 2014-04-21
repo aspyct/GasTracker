@@ -6,3 +6,9 @@
 #
 # Pods/
 
+GasTracker.xcodeproj/project.xcworkspace/xcuserdata/
+GasTracker.xcodeproj/xcuserdata/
+GasTracker.xcworkspace/xcuserdata/
+Podfile.lock
+Pods/
+
