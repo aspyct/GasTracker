@@ -83,6 +83,7 @@
 		7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRecentRefillCell.m; sourceTree = "<group>"; };
 		7403E3EE1905847700846D5B /* GTRefillStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefillStore.h; sourceTree = "<group>"; };
 		7403E3EF1905847800846D5B /* GTRefillStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefillStore.m; sourceTree = "<group>"; };
+		74C738BE190591710057BA37 /* GasTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GasTracker.entitlements; sourceTree = "<group>"; };
 		87B939C88BBE47F8A4FC7426 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +149,8 @@
 		7403E35719051F1600846D5B /* GasTracker */ = {
 			isa = PBXGroup;
 			children = (
+				7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */,
+				74C738BE190591710057BA37 /* GasTracker.entitlements */,
 				7403E36019051F1600846D5B /* GTAppDelegate.h */,
 				7403E36119051F1600846D5B /* GTAppDelegate.m */,
 				7403E3F51905895D00846D5B /* Model */,
@@ -236,7 +239,6 @@
 		7403E3F51905895D00846D5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */,
 				7403E3E51905623400846D5B /* GTRefill.h */,
 				7403E3E61905623400846D5B /* GTRefill.m */,
 				7403E3E81905655A00846D5B /* GTRefill+Extension.h */,
@@ -295,6 +297,14 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Antoine d'Otreppe";
 				TargetAttributes = {
+					7403E34D19051F1600846D5B = {
+						DevelopmentTeam = 8Z46JY66H3;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
 					7403E36E19051F1600846D5B = {
 						TestTargetID = 7403E34D19051F1600846D5B;
 					};
@@ -516,10 +526,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GasTracker/GasTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GasTracker/GasTracker-Prefix.pch";
 				INFOPLIST_FILE = "GasTracker/GasTracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -530,10 +544,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = GasTracker/GasTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GasTracker/GasTracker-Prefix.pch";
 				INFOPLIST_FILE = "GasTracker/GasTracker-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -617,8 +635,7 @@
 				7403E3901905282B00846D5B /* GasTracker.xcdatamodel */,
 			);
 			currentVersion = 7403E3901905282B00846D5B /* GasTracker.xcdatamodel */;
-			name = GasTracker.xcdatamodeld;
-			path = ../GasTracker.xcdatamodeld;
+			path = GasTracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
