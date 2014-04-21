@@ -38,13 +38,13 @@ typedef enum {
 
 @implementation GTHomeDataSource
 
-- (void)setRefillStore:(GTDataStore *)coreDataProvider
+- (void)setRefillStore:(GTRefillStore *)refillStore
 {
-    if (_refillStore != coreDataProvider) {
+    if (_refillStore != refillStore) {
         [_refillStore removeDatabaseObserver:self];
-        [coreDataProvider addDatabaseObserver:self];
+        [refillStore addDatabaseObserver:self];
         
-        _refillStore = coreDataProvider;
+        _refillStore = refillStore;
     }
 }
 
