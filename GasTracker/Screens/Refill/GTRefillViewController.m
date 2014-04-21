@@ -22,6 +22,13 @@
 
 @implementation GTRefillViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.volume becomeFirstResponder];
+}
+
 - (IBAction)doSave:(id)sender {
     GTRefill *refill = [self.refillStore buildRefill];
     refill.liters = [NSDecimalNumber decimalNumberWithString:self.volume.text];
