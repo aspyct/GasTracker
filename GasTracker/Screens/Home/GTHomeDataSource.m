@@ -25,7 +25,7 @@ typedef enum {
     GTHomeDataSourceSubsectionPerMonth,
     
     GTHomeDataSourceSubsectionFirst = GTHomeDataSourceSubsectionAverage,
-    GTHomeDataSourceSubsectionLast = GTHomeDataSourceSubsectionPerMonth,
+    GTHomeDataSourceSubsectionLast = GTHomeDataSourceSubsectionPrice,
     GTHomeDataSourceSubsectionCount = GTHomeDataSourceSubsectionLast + 1
 } GTHomeDataSourceSubsection;
 
