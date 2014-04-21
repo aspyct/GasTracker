@@ -59,14 +59,14 @@
 		7403E36419051F1600846D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7403E36619051F1600846D5B /* GTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTHomeViewController.h; sourceTree = "<group>"; };
 		7403E36719051F1600846D5B /* GTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTHomeViewController.m; sourceTree = "<group>"; };
-		7403E36919051F1600846D5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		7403E36919051F1600846D5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7403E36F19051F1600846D5B /* GasTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7403E37019051F1600846D5B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7403E37819051F1600846D5B /* GasTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GasTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		7403E37A19051F1600846D5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7403E37C19051F1600846D5B /* GasTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasTrackerTests.m; sourceTree = "<group>"; };
-		7403E38619051F9F00846D5B /* GTRefillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTRefillViewController.h; path = ../../GTRefillViewController.h; sourceTree = "<group>"; };
-		7403E38719051F9F00846D5B /* GTRefillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTRefillViewController.m; path = ../../GTRefillViewController.m; sourceTree = "<group>"; };
+		7403E38619051F9F00846D5B /* GTRefillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefillViewController.h; sourceTree = "<group>"; };
+		7403E38719051F9F00846D5B /* GTRefillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefillViewController.m; sourceTree = "<group>"; };
 		7403E3891905230B00846D5B /* GTHomeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTHomeDataSource.h; sourceTree = "<group>"; };
 		7403E38A1905230B00846D5B /* GTHomeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTHomeDataSource.m; sourceTree = "<group>"; };
 		7403E38C190523EA00846D5B /* GTConsumptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTConsumptionCell.h; sourceTree = "<group>"; };
@@ -225,7 +225,6 @@
 		7403E3F4190588D800846D5B /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */,
 				7403E3E019052E5500846D5B /* GTDataStore.h */,
 				7403E3E119052E5500846D5B /* GTDataStore.m */,
 				7403E3EE1905847700846D5B /* GTRefillStore.h */,
@@ -237,6 +236,7 @@
 		7403E3F51905895D00846D5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */,
 				7403E3E51905623400846D5B /* GTRefill.h */,
 				7403E3E61905623400846D5B /* GTRefill.m */,
 				7403E3E81905655A00846D5B /* GTRefill+Extension.h */,
