@@ -85,10 +85,14 @@ typedef enum {
 
 - (UITableViewCell *)latestRefillCellForRow:(NSInteger)row from:(UITableView *)tableView
 {
-    GTRecentRefillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"refill"];
-    cell.refill = [self.recentRefills objectAtIndex:row];
-    
-    return cell;
+    if (self.recentRefills.count > 0) {
+        GTRecentRefillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"refill"];
+        cell.refill = [self.recentRefills objectAtIndex:row];
+        
+        return cell;
+    } else {
+        return [tableView dequeueReusableCellWithIdentifier:@"no-refill"];
+    }
 }
 
 
@@ -119,8 +123,11 @@ typedef enum {
 {
     if (section == GTHomeDataSourceSectionConsumption) {
         return GTHomeDataSourceSubsectionCount;
-    } else {
+    } else if (self.recentRefills.count > 0) {
         return self.recentRefills.count;
+    } else {
+        // Display default cell
+        return 1;
     }
 }
 
