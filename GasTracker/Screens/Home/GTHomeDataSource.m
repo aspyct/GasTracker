@@ -71,14 +71,14 @@ typedef enum {
         case GTHomeDataSourceSubsectionAverage:
         {
             NSDecimalNumber *avg = [self.refillStore averageConsumption];
-            [cell setTitle:@"L/100km" andValue:avg.stringValue];
+            [cell setTitle:@"L/100km" andValue:[self formatVolume:avg]];
             break;
         }
         case GTHomeDataSourceSubsectionPrice:
         {
             NSDecimalNumber *avg = [self.refillStore averageConsumption];
             NSDecimalNumber *price = [avg decimalNumberByMultiplyingBy:[self.refillStore latestPrice]];
-            [cell setTitle:@"€/100km" andValue:price.stringValue];
+            [cell setTitle:@"€/100km" andValue:[self formatPrice:price]];
             break;
         }
         case GTHomeDataSourceSubsectionPerMonth:
@@ -87,6 +87,27 @@ typedef enum {
     }
     
     return cell;
+}
+
+
+- (NSString *)formatVolume:(NSDecimalNumber *)volume
+{
+    return [[self formatDecimal:volume] stringByAppendingString:@"L"];
+}
+
+
+- (NSString *)formatPrice:(NSDecimalNumber *)price
+{
+    return [[self formatDecimal:price] stringByAppendingString:@"€"];
+}
+
+
+- (NSString *)formatDecimal:(NSDecimalNumber *)decimal
+{
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    formatter.maximumFractionDigits = 2;
+    
+    return [formatter stringFromNumber:decimal];
 }
 
 
