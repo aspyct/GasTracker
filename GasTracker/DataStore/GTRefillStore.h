@@ -21,7 +21,15 @@
  */
 - (NSDecimalNumber *)latestPrice;
 
-
+/**
+ * Get the average consumption.
+ *
+ * It is expressed in liters / 100km.
+ * Scans only the last 100 refills.
+ * In these refills, it needs at least two with odometer record.
+ *
+ * @return the average consumption, or nil if unknown
+ */
 - (NSDecimalNumber *)averageConsumption;
 
 @end

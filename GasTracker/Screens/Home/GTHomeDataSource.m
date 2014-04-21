@@ -69,8 +69,11 @@ typedef enum {
     
     switch (row) {
         case GTHomeDataSourceSubsectionAverage:
-            [cell setTitle:@"Average / 100km" andValue:@"4.52L"];
+        {
+            NSDecimalNumber *avg = [self.refillStore averageConsumption];
+            [cell setTitle:@"Average / 100km" andValue:avg.stringValue];
             break;
+        }
         case GTHomeDataSourceSubsectionPrice:
             [cell setTitle:@"Price / 100km" andValue:@"7.12€"];
             break;
