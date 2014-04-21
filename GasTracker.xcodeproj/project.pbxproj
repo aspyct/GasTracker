@@ -14,13 +14,19 @@
 		7403E35E19051F1600846D5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E35D19051F1600846D5B /* main.m */; };
 		7403E36219051F1600846D5B /* GTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E36119051F1600846D5B /* GTAppDelegate.m */; };
 		7403E36519051F1600846D5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7403E36319051F1600846D5B /* Main.storyboard */; };
-		7403E36819051F1600846D5B /* GTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E36719051F1600846D5B /* GTViewController.m */; };
+		7403E36819051F1600846D5B /* GTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E36719051F1600846D5B /* GTHomeViewController.m */; };
 		7403E36A19051F1600846D5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7403E36919051F1600846D5B /* Images.xcassets */; };
 		7403E37119051F1600846D5B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403E37019051F1600846D5B /* XCTest.framework */; };
 		7403E37219051F1600846D5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403E35119051F1600846D5B /* Foundation.framework */; };
 		7403E37319051F1600846D5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403E35519051F1600846D5B /* UIKit.framework */; };
 		7403E37B19051F1600846D5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7403E37919051F1600846D5B /* InfoPlist.strings */; };
 		7403E37D19051F1600846D5B /* GasTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E37C19051F1600846D5B /* GasTrackerTests.m */; };
+		7403E38819051F9F00846D5B /* GTRefillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E38719051F9F00846D5B /* GTRefillViewController.m */; };
+		7403E38B1905230B00846D5B /* GTHomeDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E38A1905230B00846D5B /* GTHomeDataSource.m */; };
+		7403E38E190523EA00846D5B /* GTKeyValueTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E38D190523EA00846D5B /* GTKeyValueTableViewCell.m */; };
+		7403E3911905282B00846D5B /* GasTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */; };
+		7403E3E219052E5500846D5B /* GTDatabaseProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E3E119052E5500846D5B /* GTDatabaseProvider.m */; };
+		7403E3E4190530B800846D5B /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7403E3E3190530B800846D5B /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3843B839429440E4B92DF9E7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7403E34E19051F1600846D5B /* GasTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7403E35119051F1600846D5B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7403E35319051F1600846D5B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +52,24 @@
 		7403E36019051F1600846D5B /* GTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTAppDelegate.h; sourceTree = "<group>"; };
 		7403E36119051F1600846D5B /* GTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTAppDelegate.m; sourceTree = "<group>"; };
 		7403E36419051F1600846D5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7403E36619051F1600846D5B /* GTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTViewController.h; sourceTree = "<group>"; };
-		7403E36719051F1600846D5B /* GTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTViewController.m; sourceTree = "<group>"; };
+		7403E36619051F1600846D5B /* GTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTHomeViewController.h; sourceTree = "<group>"; };
+		7403E36719051F1600846D5B /* GTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTHomeViewController.m; sourceTree = "<group>"; };
 		7403E36919051F1600846D5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7403E36F19051F1600846D5B /* GasTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7403E37019051F1600846D5B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7403E37819051F1600846D5B /* GasTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GasTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		7403E37A19051F1600846D5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7403E37C19051F1600846D5B /* GasTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GasTrackerTests.m; sourceTree = "<group>"; };
+		7403E38619051F9F00846D5B /* GTRefillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefillViewController.h; sourceTree = "<group>"; };
+		7403E38719051F9F00846D5B /* GTRefillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefillViewController.m; sourceTree = "<group>"; };
+		7403E3891905230B00846D5B /* GTHomeDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTHomeDataSource.h; sourceTree = "<group>"; };
+		7403E38A1905230B00846D5B /* GTHomeDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTHomeDataSource.m; sourceTree = "<group>"; };
+		7403E38C190523EA00846D5B /* GTKeyValueTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTKeyValueTableViewCell.h; sourceTree = "<group>"; };
+		7403E38D190523EA00846D5B /* GTKeyValueTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTKeyValueTableViewCell.m; sourceTree = "<group>"; };
+		7403E3901905282B00846D5B /* GasTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GasTracker.xcdatamodel; sourceTree = "<group>"; };
+		7403E3E019052E5500846D5B /* GTDatabaseProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTDatabaseProvider.h; sourceTree = "<group>"; };
+		7403E3E119052E5500846D5B /* GTDatabaseProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTDatabaseProvider.m; sourceTree = "<group>"; };
+		7403E3E3190530B800846D5B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7403E3E4190530B800846D5B /* CoreData.framework in Frameworks */,
 				7403E35419051F1600846D5B /* CoreGraphics.framework in Frameworks */,
 				7403E35619051F1600846D5B /* UIKit.framework in Frameworks */,
 				7403E35219051F1600846D5B /* Foundation.framework in Frameworks */,
@@ -86,6 +104,7 @@
 				7403E37619051F1600846D5B /* GasTrackerTests */,
 				7403E35019051F1600846D5B /* Frameworks */,
 				7403E34F19051F1600846D5B /* Products */,
+				3843B839429440E4B92DF9E7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +120,7 @@
 		7403E35019051F1600846D5B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7403E3E3190530B800846D5B /* CoreData.framework */,
 				7403E35119051F1600846D5B /* Foundation.framework */,
 				7403E35319051F1600846D5B /* CoreGraphics.framework */,
 				7403E35519051F1600846D5B /* UIKit.framework */,
@@ -115,8 +135,17 @@
 				7403E36019051F1600846D5B /* GTAppDelegate.h */,
 				7403E36119051F1600846D5B /* GTAppDelegate.m */,
 				7403E36319051F1600846D5B /* Main.storyboard */,
-				7403E36619051F1600846D5B /* GTViewController.h */,
-				7403E36719051F1600846D5B /* GTViewController.m */,
+				7403E36619051F1600846D5B /* GTHomeViewController.h */,
+				7403E36719051F1600846D5B /* GTHomeViewController.m */,
+				7403E38619051F9F00846D5B /* GTRefillViewController.h */,
+				7403E38719051F9F00846D5B /* GTRefillViewController.m */,
+				7403E3891905230B00846D5B /* GTHomeDataSource.h */,
+				7403E38A1905230B00846D5B /* GTHomeDataSource.m */,
+				7403E38C190523EA00846D5B /* GTKeyValueTableViewCell.h */,
+				7403E38D190523EA00846D5B /* GTKeyValueTableViewCell.m */,
+				7403E3E019052E5500846D5B /* GTDatabaseProvider.h */,
+				7403E3E119052E5500846D5B /* GTDatabaseProvider.m */,
+				7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */,
 				7403E36919051F1600846D5B /* Images.xcassets */,
 				7403E35819051F1600846D5B /* Supporting Files */,
 			);
@@ -159,9 +188,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7403E38019051F1600846D5B /* Build configuration list for PBXNativeTarget "GasTracker" */;
 			buildPhases = (
+				A9657BEDFEED4298B828B8E6 /* Check Pods Manifest.lock */,
 				7403E34A19051F1600846D5B /* Sources */,
 				7403E34B19051F1600846D5B /* Frameworks */,
 				7403E34C19051F1600846D5B /* Resources */,
+				A7231988A67344638AAB776C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -245,14 +276,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A7231988A67344638AAB776C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9657BEDFEED4298B828B8E6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7403E34A19051F1600846D5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7403E35E19051F1600846D5B /* main.m in Sources */,
-				7403E36819051F1600846D5B /* GTViewController.m in Sources */,
+				7403E38B1905230B00846D5B /* GTHomeDataSource.m in Sources */,
+				7403E38E190523EA00846D5B /* GTKeyValueTableViewCell.m in Sources */,
+				7403E3911905282B00846D5B /* GasTracker.xcdatamodeld in Sources */,
+				7403E36819051F1600846D5B /* GTHomeViewController.m in Sources */,
 				7403E36219051F1600846D5B /* GTAppDelegate.m in Sources */,
+				7403E38819051F9F00846D5B /* GTRefillViewController.m in Sources */,
+				7403E3E219052E5500846D5B /* GTDatabaseProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +443,7 @@
 		};
 		7403E38119051F1600846D5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3843B839429440E4B92DF9E7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -387,6 +457,7 @@
 		};
 		7403E38219051F1600846D5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3843B839429440E4B92DF9E7 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -457,6 +528,7 @@
 				7403E38219051F1600846D5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7403E38319051F1600846D5B /* Build configuration list for PBXNativeTarget "GasTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -465,8 +537,22 @@
 				7403E38519051F1600846D5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7403E38F1905282B00846D5B /* GasTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7403E3901905282B00846D5B /* GasTracker.xcdatamodel */,
+			);
+			currentVersion = 7403E3901905282B00846D5B /* GasTracker.xcdatamodel */;
+			path = GasTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7403E34619051F1600846D5B /* Project object */;
 }

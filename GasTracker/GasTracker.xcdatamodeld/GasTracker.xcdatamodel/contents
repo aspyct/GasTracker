@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="0.1" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Refill" representedClassName="GTRefill" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="liters" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="pricePerLiter" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <compoundIndexes>
+            <compoundIndex>
+                <index value="day"/>
+            </compoundIndex>
+        </compoundIndexes>
+    </entity>
+    <fetchRequest name="AllRefills" entity="Refill"/>
+    <elements>
+        <element name="Refill" positionX="-63" positionY="-18" width="128" height="88"/>
+    </elements>
+</model>

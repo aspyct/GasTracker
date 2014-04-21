@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Antoine d'Otreppe. All rights reserved.
 //
 
-#import "GTViewController.h"
+#import "GTHomeViewController.h"
 
-@interface GTViewController ()
+@interface GTHomeViewController ()
 
 @end
 
-@implementation GTViewController
+@implementation GTHomeViewController
 
 - (void)viewDidLoad
 {
