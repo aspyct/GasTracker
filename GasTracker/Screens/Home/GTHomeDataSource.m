@@ -71,18 +71,18 @@ typedef enum {
         case GTHomeDataSourceSubsectionAverage:
         {
             NSDecimalNumber *avg = [self.refillStore averageConsumption];
-            [cell setTitle:@"Average / 100km" andValue:avg.stringValue];
+            [cell setTitle:@"L/100km" andValue:avg.stringValue];
             break;
         }
         case GTHomeDataSourceSubsectionPrice:
         {
             NSDecimalNumber *avg = [self.refillStore averageConsumption];
             NSDecimalNumber *price = [avg decimalNumberByMultiplyingBy:[self.refillStore latestPrice]];
-            [cell setTitle:@"Price / 100km" andValue:price.stringValue];
+            [cell setTitle:@"€/100km" andValue:price.stringValue];
             break;
         }
         case GTHomeDataSourceSubsectionPerMonth:
-            [cell setTitle:@"Per month" andValue:@"16.48€"];
+            [cell setTitle:@"€/month" andValue:@"16.48€"];
             break;
     }
     
@@ -141,7 +141,7 @@ typedef enum {
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == GTHomeDataSourceSectionConsumption) {
-        return @"Consumption summary";
+        return @"Summary";
     } else {
         return @"Recent refills";
     }
