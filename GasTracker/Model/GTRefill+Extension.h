@@ -11,5 +11,6 @@
 @interface GTRefill (Extension)
 
 - (NSDecimalNumber *)totalPrice;
++ (NSDecimalNumber *)averageConsumption:(NSArray *)refills;
 
 @end

@@ -7,60 +7,36 @@
 //
 
 #import "GTRefillStore.h"
+#import "GTRefill+Extension.h"
+
+@interface GTRefillStore ()
+
+// Computation of the average consumption is heavy. Let's cache it.
+@property (strong, nonatomic) NSDecimalNumber *averageConsumption;
+
+@end
 
 @implementation GTRefillStore
 
+- (void)dataModified
+{
+    [super dataModified];
+    
+    _averageConsumption = nil;
+}
+
 - (NSDecimalNumber *)averageConsumption
 {
-    NSFetchRequest *request = [self baseRequestAscending:YES];
-    request.fetchLimit = 100;
-    NSArray *lastHundred = [self fetch:request];
-    
-    // The total consumption between odometerMin and odometerMax
-    NSDecimalNumber *totalConsumption = [NSDecimalNumber zero];
-    
-    // The accumulator to use until the next odometer mark
-    NSDecimalNumber *stagedTotalConsumption = [NSDecimalNumber zero];
-    
-    // The first odometer mark found
-    NSDecimalNumber *odometerMin = nil;
-    
-    // The last odometer mark found
-    NSDecimalNumber *odometerMax = nil;
-    
-    for (GTRefill *refill in lastHundred) {
-        if ([refill.odometer compare:[NSDecimalNumber zero]] != NSOrderedSame) {
-            // If we have an odometer mark
-            if (odometerMin == nil) {
-                // The first mark is the minimum we'll use
-                odometerMin = refill.odometer;
-            } else {
-                // All subsequent marks must "flush" the staged consumption
-                // and update the odometerMax
-                odometerMax = refill.odometer;
-                totalConsumption = [totalConsumption decimalNumberByAdding:stagedTotalConsumption];
-            }
-            
-            if (odometerMin != nil) {
-                // We started counting, so count on
-                stagedTotalConsumption = [stagedTotalConsumption decimalNumberByAdding:refill.liters];
-            }
-        }
+    if (_averageConsumption == nil) {
+        NSFetchRequest *request = [self baseRequest];
+        request.fetchLimit = 100;
+        
+        NSArray *results = [self fetch:request];
+        
+        _averageConsumption = [GTRefill averageConsumption:results];
     }
     
-    if (odometerMax != nil) {
-        // 100, as a NSDecimalNumber
-        NSDecimalNumber *hundred = [NSDecimalNumber decimalNumberWithMantissa:1 exponent:2 isNegative:NO];
-        
-        // How many times we ran 100km
-        NSDecimalNumber *hundredKilometers = [[odometerMax decimalNumberBySubtracting:odometerMin] decimalNumberByDividingBy:hundred];
-        
-        // L/100km
-        return [totalConsumption decimalNumberByDividingBy:hundredKilometers];
-    } else {
-        // We don't have enough data
-        return nil;
-    }
+    return _averageConsumption;
 }
 
 - (NSDecimalNumber *)latestPrice

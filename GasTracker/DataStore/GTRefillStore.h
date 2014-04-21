@@ -7,6 +7,7 @@
 //
 
 #import "GTDataStore.h"
+#import "GTRefill.h"
 
 @interface GTRefillStore : GTDataStore
 

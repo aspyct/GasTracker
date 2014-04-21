@@ -32,6 +32,8 @@
 		7403E3EA1905655A00846D5B /* GTRefill+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E3E91905655A00846D5B /* GTRefill+Extension.m */; };
 		7403E3ED19056E1A00846D5B /* GTRecentRefillCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */; };
 		7403E3F01905847800846D5B /* GTRefillStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E3EF1905847800846D5B /* GTRefillStore.m */; };
+		748D9C9C1905C2E600CC8706 /* GTPreludeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */; };
+		748D9C9F1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D9C9E1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,10 @@
 		7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRecentRefillCell.m; sourceTree = "<group>"; };
 		7403E3EE1905847700846D5B /* GTRefillStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRefillStore.h; sourceTree = "<group>"; };
 		7403E3EF1905847800846D5B /* GTRefillStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRefillStore.m; sourceTree = "<group>"; };
+		748D9C9A1905C2E600CC8706 /* GTPreludeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTPreludeArray.h; sourceTree = "<group>"; };
+		748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTPreludeArray.m; sourceTree = "<group>"; };
+		748D9C9D1905CC4C00CC8706 /* NSDecimalNumber+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Comparison.h"; sourceTree = "<group>"; };
+		748D9C9E1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Comparison.m"; sourceTree = "<group>"; };
 		74C738BE190591710057BA37 /* GasTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GasTracker.entitlements; sourceTree = "<group>"; };
 		87B939C88BBE47F8A4FC7426 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -156,6 +162,7 @@
 				7403E3F51905895D00846D5B /* Model */,
 				7403E3F4190588D800846D5B /* DataStore */,
 				7403E3F1190588C600846D5B /* Screens */,
+				748D9C961905C15F00CC8706 /* Functional */,
 				7403E35819051F1600846D5B /* Supporting Files */,
 			);
 			path = GasTracker;
@@ -243,8 +250,19 @@
 				7403E3E61905623400846D5B /* GTRefill.m */,
 				7403E3E81905655A00846D5B /* GTRefill+Extension.h */,
 				7403E3E91905655A00846D5B /* GTRefill+Extension.m */,
+				748D9C9D1905CC4C00CC8706 /* NSDecimalNumber+Comparison.h */,
+				748D9C9E1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		748D9C961905C15F00CC8706 /* Functional */ = {
+			isa = PBXGroup;
+			children = (
+				748D9C9A1905C2E600CC8706 /* GTPreludeArray.h */,
+				748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */,
+			);
+			path = Functional;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,11 +412,13 @@
 				7403E3EA1905655A00846D5B /* GTRefill+Extension.m in Sources */,
 				7403E38E190523EA00846D5B /* GTConsumptionCell.m in Sources */,
 				7403E3ED19056E1A00846D5B /* GTRecentRefillCell.m in Sources */,
+				748D9C9C1905C2E600CC8706 /* GTPreludeArray.m in Sources */,
 				7403E3911905282B00846D5B /* GasTracker.xcdatamodeld in Sources */,
 				7403E36819051F1600846D5B /* GTHomeViewController.m in Sources */,
 				7403E36219051F1600846D5B /* GTAppDelegate.m in Sources */,
 				7403E38819051F9F00846D5B /* GTRefillViewController.m in Sources */,
 				7403E3E219052E5500846D5B /* GTDataStore.m in Sources */,
+				748D9C9F1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m in Sources */,
 				7403E3E71905623400846D5B /* GTRefill.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

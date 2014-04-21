@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GTRefill.h"
 
 @protocol GTDataObserver <NSObject>
 
@@ -16,7 +15,7 @@
 
 @end
 
-@interface GTDataStore : NSObject
+@interface GTDataStore : NSObject <GTDataObserver>
 
 @property (readonly) NSManagedObjectContext *managedObjectContext;
 @property (readonly) NSManagedObjectModel *managedObjectModel;

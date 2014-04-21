@@ -75,8 +75,12 @@ typedef enum {
             break;
         }
         case GTHomeDataSourceSubsectionPrice:
-            [cell setTitle:@"Price / 100km" andValue:@"7.12€"];
+        {
+            NSDecimalNumber *avg = [self.refillStore averageConsumption];
+            NSDecimalNumber *price = [avg decimalNumberByMultiplyingBy:[self.refillStore latestPrice]];
+            [cell setTitle:@"Price / 100km" andValue:price.stringValue];
             break;
+        }
         case GTHomeDataSourceSubsectionPerMonth:
             [cell setTitle:@"Per month" andValue:@"16.48€"];
             break;

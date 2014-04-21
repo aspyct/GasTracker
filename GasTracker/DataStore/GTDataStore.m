@@ -34,6 +34,11 @@
     [self unregisterForSaveEvents];
 }
 
+- (void)dataModified
+{
+    // Override me
+}
+
 - (void)registerForSaveEvents
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -51,6 +56,8 @@
 
 - (void)databaseModified:(NSNotification *)notification
 {
+    [self dataModified];
+    
     for (id<GTDataObserver> observer in self.databaseObservers) {
         [observer dataModified];
     }
