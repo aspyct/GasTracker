@@ -10,12 +10,18 @@
 
 @implementation GTRefillStore
 
-- (NSArray *)lastHundredRefills
+- (NSDecimalNumber *)latestPrice
 {
     NSFetchRequest *request = [self baseRequest];
-    request.fetchLimit = 100;
+    request.fetchLimit = 1;
     
-    return [self fetch:request];
+    NSArray *result = [self fetch:request];
+    if (result.count > 0) {
+        GTRefill *latestRefill = result[0];
+        return latestRefill.pricePerLiter;
+    } else {
+        return nil;
+    }
 }
 
 - (NSArray *)recentRefills

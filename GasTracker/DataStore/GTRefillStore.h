@@ -11,8 +11,17 @@
 @interface GTRefillStore : GTDataStore
 
 - (NSArray *)recentRefills;
-- (NSArray *)lastHundredRefills;
 - (GTRefill *)buildRefill;
 - (BOOL)saveRefill:(GTRefill *)refill;
+
+/**
+ * Get the price per liter of the latest fill up.
+ *
+ * @return the price per liter, or nil if there's no known fillup
+ */
+- (NSDecimalNumber *)latestPrice;
+
+
+- (NSDecimalNumber *)averageConsumption;
 
 @end

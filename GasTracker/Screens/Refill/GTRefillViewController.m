@@ -27,13 +27,24 @@
     [super viewWillAppear:animated];
     
     [self.volume becomeFirstResponder];
+    
+    NSDecimalNumber *latestPrice = [self.refillStore latestPrice];
+    if (latestPrice != nil) {
+        self.price.placeholder = latestPrice.stringValue;
+    }
 }
 
 - (IBAction)doSave:(id)sender {
     GTRefill *refill = [self.refillStore buildRefill];
     refill.liters = [NSDecimalNumber decimalNumberWithString:self.volume.text];
-    refill.pricePerLiter = [NSDecimalNumber decimalNumberWithString:self.price.text];
     
+    // The price per liter is either specified by user, or the last known value
+    if (self.price.text.length > 0) {
+        refill.pricePerLiter = [NSDecimalNumber decimalNumberWithString:self.price.text];
+    } else {
+        refill.pricePerLiter = self.refillStore.latestPrice;
+    }
+
     if (self.odometer.text.length > 0) {
         refill.odometer = [NSDecimalNumber decimalNumberWithString:self.odometer.text];
     }
