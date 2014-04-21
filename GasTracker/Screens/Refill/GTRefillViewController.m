@@ -36,17 +36,17 @@
 
 - (IBAction)doSave:(id)sender {
     GTRefill *refill = [self.refillStore buildRefill];
-    refill.liters = [NSDecimalNumber decimalNumberWithString:self.volume.text];
+    refill.liters = [self decimalFromString:self.volume.text];
     
     // The price per liter is either specified by user, or the last known value
     if (self.price.text.length > 0) {
-        refill.pricePerLiter = [NSDecimalNumber decimalNumberWithString:self.price.text];
+        refill.pricePerLiter = [self decimalFromString:self.price.text];
     } else {
         refill.pricePerLiter = self.refillStore.latestPrice;
     }
 
     if (self.odometer.text.length > 0) {
-        refill.odometer = [NSDecimalNumber decimalNumberWithString:self.odometer.text];
+        refill.odometer = [self decimalFromString:self.odometer.text];
     }
     
     refill.day = [NSDate date];
@@ -57,6 +57,17 @@
 
 - (IBAction)doCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Conversion
+
+- (NSDecimalNumber *)decimalFromString:(NSString *)string
+{
+    if (string.length > 0) {
+        return [NSDecimalNumber decimalNumberWithString:string locale:[NSLocale currentLocale]];
+    } else {
+        return nil;
+    }
 }
 
 @end
