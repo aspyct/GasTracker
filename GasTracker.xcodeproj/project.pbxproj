@@ -201,13 +201,13 @@
 		7403E3F2190588CE00846D5B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7403E36619051F1600846D5B /* GTHomeViewController.h */,
 				7403E3891905230B00846D5B /* GTHomeDataSource.h */,
 				7403E38A1905230B00846D5B /* GTHomeDataSource.m */,
 				7403E38C190523EA00846D5B /* GTConsumptionCell.h */,
 				7403E38D190523EA00846D5B /* GTConsumptionCell.m */,
 				7403E3EB19056E1A00846D5B /* GTRecentRefillCell.h */,
 				7403E3EC19056E1A00846D5B /* GTRecentRefillCell.m */,
+				7403E36619051F1600846D5B /* GTHomeViewController.h */,
 				7403E36719051F1600846D5B /* GTHomeViewController.m */,
 			);
 			path = Home;
