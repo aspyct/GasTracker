@@ -9,20 +9,17 @@
 #import "GTRefillStore.h"
 #import "GTRefill+Extension.h"
 
-@interface GTRefillStore ()
-
-// Computation of the average consumption is heavy. Let's cache it.
-@property (strong, nonatomic) NSDecimalNumber *averageConsumption;
-
-@end
-
 @implementation GTRefillStore
+
+@synthesize recentRefills = _recentRefills;
+@synthesize averageConsumption = _averageConsumption;
 
 - (void)dataModified
 {
     [super dataModified];
     
     _averageConsumption = nil;
+    _recentRefills = nil;
 }
 
 - (NSDecimalNumber *)averageConsumption
@@ -55,10 +52,14 @@
 
 - (NSArray *)recentRefills
 {
-    NSFetchRequest *request = [self baseRequest];
-    request.fetchLimit = 5;
+    if (_recentRefills == nil) {
+        NSFetchRequest *request = [self baseRequest];
+        request.fetchLimit = 5;
+        
+        _recentRefills = [self fetch:request];
+    }
     
-    return [self fetch:request];
+    return _recentRefills;
 }
 
 - (GTRefill *)buildRefill

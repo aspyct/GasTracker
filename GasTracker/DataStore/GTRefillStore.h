@@ -11,26 +11,26 @@
 
 @interface GTRefillStore : GTDataStore
 
-- (NSArray *)recentRefills;
-- (GTRefill *)buildRefill;
-- (BOOL)saveRefill:(GTRefill *)refill;
-
 /**
- * Get the price per liter of the latest fill up.
- *
- * @return the price per liter, or nil if there's no known fillup
+ * The 5 most recent refills
  */
-- (NSDecimalNumber *)latestPrice;
+@property (readonly) NSArray *recentRefills;
 
 /**
- * Get the average consumption.
+ * The price per liter, or nil if there's no known fillup
+ */
+@property (readonly) NSDecimalNumber *latestPrice;
+
+/**
+ * The average consumption, or nil if unknown
  *
  * It is expressed in liters / 100km.
  * Scans only the last 100 refills.
  * In these refills, it needs at least two with odometer record.
- *
- * @return the average consumption, or nil if unknown
  */
-- (NSDecimalNumber *)averageConsumption;
+@property (readonly) NSDecimalNumber *averageConsumption;
+
+- (GTRefill *)buildRefill;
+- (BOOL)saveRefill:(GTRefill *)refill;
 
 @end
