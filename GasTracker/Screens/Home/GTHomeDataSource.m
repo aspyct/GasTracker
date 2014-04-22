@@ -32,26 +32,10 @@ typedef enum {
 @interface GTHomeDataSource ()
 
 @property (strong, nonatomic) IBOutlet GTRefillStore *refillStore;
-@property (strong, nonatomic) NSArray *recentRefills;
 
 @end
 
 @implementation GTHomeDataSource
-
-- (void)setRefillStore:(GTRefillStore *)refillStore
-{
-    if (_refillStore != refillStore) {
-        [_refillStore removeDatabaseObserver:self];
-        [refillStore addDatabaseObserver:self];
-        
-        _refillStore = refillStore;
-    }
-}
-
-- (void)dataModified
-{
-    _recentRefills = nil;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -113,9 +97,9 @@ typedef enum {
 
 - (UITableViewCell *)latestRefillCellForRow:(NSInteger)row from:(UITableView *)tableView
 {
-    if (self.recentRefills.count > 0) {
+    if (self.refillStore.recentRefills.count > 0) {
         GTRecentRefillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"refill"];
-        cell.refill = [self.recentRefills objectAtIndex:row];
+        cell.refill = [self.refillStore.recentRefills objectAtIndex:row];
         
         return cell;
     } else {
@@ -127,16 +111,6 @@ typedef enum {
 - (GTConsumptionCell *)aKeyValueCellFrom:(UITableView *)tableView
 {
     return [tableView dequeueReusableCellWithIdentifier:@"consumption"];
-}
-
-
-- (NSArray *)recentRefills
-{
-    if (_recentRefills == nil) {
-        _recentRefills = [self.refillStore recentRefills];
-    }
-    
-    return _recentRefills;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -151,8 +125,8 @@ typedef enum {
 {
     if (section == GTHomeDataSourceSectionConsumption) {
         return GTHomeDataSourceSubsectionCount;
-    } else if (self.recentRefills.count > 0) {
-        return self.recentRefills.count;
+    } else if (self.refillStore.recentRefills.count > 0) {
+        return self.refillStore.recentRefills.count;
     } else {
         // Display default cell
         return 1;
