@@ -8,21 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol GTDataObserver <NSObject>
-
-@required
-- (void)dataModified;
-
-@end
-
-@interface GTDataStore : NSObject <GTDataObserver>
+@interface GTDataStore : NSObject
 
 @property (readonly) NSManagedObjectContext *managedObjectContext;
 @property (readonly) NSManagedObjectModel *managedObjectModel;
 @property (readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (id)fetch:(NSFetchRequest *)request;
-- (void)addDatabaseObserver:(id<GTDataObserver>)listener;
-- (void)removeDatabaseObserver:(id<GTDataObserver>)listener;
+
+/**
+ * This method is called whenever the data store is modified.
+ * 
+ * Override it in subclasses to watch for the save event.
+ * You may want to use this to invalidate caches.
+ */
+- (void)dataModified;
 
 @end
