@@ -12,7 +12,6 @@
 @interface GTDataStore ()
 
 @property (readonly) GTAppDelegate *appDelegate;
-@property (strong, nonatomic) NSMutableSet *databaseObservers;
 
 @end
 
@@ -57,24 +56,6 @@
 - (void)databaseModified:(NSNotification *)notification
 {
     [self dataModified];
-    
-    for (id<GTDataObserver> observer in self.databaseObservers) {
-        [observer dataModified];
-    }
-}
-
-- (void)addDatabaseObserver:(id<GTDataObserver>)observer
-{
-    if (self.databaseObservers == nil) {
-        self.databaseObservers = [[NSMutableSet alloc] initWithCapacity:5];
-    }
-    
-    [self.databaseObservers addObject:observer];
-}
-
-- (void)removeDatabaseObserver:(id<GTDataObserver>)observer
-{
-    [self.databaseObservers removeObject:observer];
 }
 
 - (NSArray *)fetch:(NSFetchRequest *)request

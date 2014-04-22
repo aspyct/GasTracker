@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "GTRefillStore.h"
 
-@interface GTHomeDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, GTDataObserver>
+@interface GTHomeDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @end
