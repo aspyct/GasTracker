@@ -34,6 +34,8 @@
 		7403E3F01905847800846D5B /* GTRefillStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 7403E3EF1905847800846D5B /* GTRefillStore.m */; };
 		748D9C9C1905C2E600CC8706 /* GTPreludeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */; };
 		748D9C9F1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 748D9C9E1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m */; };
+		74C4B6901906FF1A003E9212 /* GTAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4B68F1906FF1A003E9212 /* GTAboutViewController.m */; };
+		74C4B693190700C4003E9212 /* GTLicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74C4B692190700C4003E9212 /* GTLicenseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,10 @@
 		748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTPreludeArray.m; sourceTree = "<group>"; };
 		748D9C9D1905CC4C00CC8706 /* NSDecimalNumber+Comparison.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDecimalNumber+Comparison.h"; sourceTree = "<group>"; };
 		748D9C9E1905CC4C00CC8706 /* NSDecimalNumber+Comparison.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDecimalNumber+Comparison.m"; sourceTree = "<group>"; };
+		74C4B68E1906FF1A003E9212 /* GTAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTAboutViewController.h; sourceTree = "<group>"; };
+		74C4B68F1906FF1A003E9212 /* GTAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTAboutViewController.m; sourceTree = "<group>"; };
+		74C4B691190700C4003E9212 /* GTLicenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTLicenseViewController.h; sourceTree = "<group>"; };
+		74C4B692190700C4003E9212 /* GTLicenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLicenseViewController.m; sourceTree = "<group>"; };
 		74C738BE190591710057BA37 /* GasTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GasTracker.entitlements; sourceTree = "<group>"; };
 		87B939C88BBE47F8A4FC7426 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +208,8 @@
 			children = (
 				7403E36319051F1600846D5B /* Main.storyboard */,
 				7403E36919051F1600846D5B /* Images.xcassets */,
+				74C4B68D1906FED6003E9212 /* License */,
+				74C4B68C1906FECF003E9212 /* About */,
 				7403E3F3190588D200846D5B /* Refill */,
 				7403E3F2190588CE00846D5B /* Home */,
 			);
@@ -263,6 +271,24 @@
 				748D9C9B1905C2E600CC8706 /* GTPreludeArray.m */,
 			);
 			path = Functional;
+			sourceTree = "<group>";
+		};
+		74C4B68C1906FECF003E9212 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				74C4B68E1906FF1A003E9212 /* GTAboutViewController.h */,
+				74C4B68F1906FF1A003E9212 /* GTAboutViewController.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		74C4B68D1906FED6003E9212 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				74C4B691190700C4003E9212 /* GTLicenseViewController.h */,
+				74C4B692190700C4003E9212 /* GTLicenseViewController.m */,
+			);
+			path = License;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,7 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7403E3F01905847800846D5B /* GTRefillStore.m in Sources */,
+				74C4B693190700C4003E9212 /* GTLicenseViewController.m in Sources */,
 				7403E35E19051F1600846D5B /* main.m in Sources */,
+				74C4B6901906FF1A003E9212 /* GTAboutViewController.m in Sources */,
 				7403E38B1905230B00846D5B /* GTHomeDataSource.m in Sources */,
 				7403E3EA1905655A00846D5B /* GTRefill+Extension.m in Sources */,
 				7403E38E190523EA00846D5B /* GTConsumptionCell.m in Sources */,
