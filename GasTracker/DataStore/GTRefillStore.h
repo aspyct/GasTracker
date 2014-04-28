@@ -32,5 +32,6 @@
 
 - (GTRefill *)buildRefill;
 - (BOOL)saveRefill:(GTRefill *)refill;
+- (BOOL)deleteRefill:(GTRefill *)refill;
 
 @end

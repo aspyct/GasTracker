@@ -99,18 +99,12 @@ typedef enum {
 {
     if (self.refillStore.recentRefills.count > 0) {
         GTRecentRefillCell *cell = [tableView dequeueReusableCellWithIdentifier:@"refill"];
-        cell.refill = [self.refillStore.recentRefills objectAtIndex:row];
+        cell.refill = [self refillForRow:row];
         
         return cell;
     } else {
         return [tableView dequeueReusableCellWithIdentifier:@"no-refill"];
     }
-}
-
-
-- (GTConsumptionCell *)aKeyValueCellFrom:(UITableView *)tableView
-{
-    return [tableView dequeueReusableCellWithIdentifier:@"consumption"];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -139,6 +133,37 @@ typedef enum {
         return @"Summary";
     } else {
         return @"Recent refills";
+    }
+}
+
+#pragma mark - Getting the refills
+
+- (GTRefill *)refillForRow:(NSInteger)row
+{
+    return [self.refillStore.recentRefills objectAtIndex:row];
+}
+
+#pragma mark - Recent refills editing
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.section == GTHomeDataSourceSectionRecent;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the refill
+        GTRefill *toBeDeleted = [self refillForRow:indexPath.row];
+        [self.refillStore deleteRefill:toBeDeleted];
+        
+        // Update the table
+        if (self.refillStore.recentRefills.count > 0) {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        } else {
+            // The above would assert-crash because the default row will be displayed
+            [tableView reloadData];
+        }
     }
 }
 

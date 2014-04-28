@@ -8,10 +8,6 @@
 
 #import "GTHomeViewController.h"
 
-@interface GTHomeViewController ()
-
-@end
-
 @implementation GTHomeViewController
 
 - (void)viewWillAppear:(BOOL)animated

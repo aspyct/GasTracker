@@ -17,7 +17,11 @@
 - (void)dataModified
 {
     [super dataModified];
-    
+    [self clearCache];
+}
+
+- (void)clearCache
+{
     _averageConsumption = nil;
     _recentRefills = nil;
 }
@@ -75,6 +79,15 @@
 {
     [self.managedObjectContext insertObject:refill];
     [self.managedObjectContext save:nil];
+    
+    return YES;
+}
+
+- (BOOL)deleteRefill:(GTRefill *)refill
+{
+    [self.managedObjectContext deleteObject:refill];
+    [self.managedObjectContext save:nil];
+    
     return YES;
 }
 
